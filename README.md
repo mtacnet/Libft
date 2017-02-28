@@ -15,4 +15,4 @@ clean, fclean, re
 Les flags appliqués lors de la compilation gcc sont: -Wall -Werror -Wextra
 
 ------------------------------------------------------------------------------------------------------------------------------
-mickaeltac@student.42.fr
+mtacnet@student.42.fr
