@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   view_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtacnet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mtacnet <mtacnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 17:46:10 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/01/04 13:28:17 by mtacnet          ###   ########.fr       */
+/*   Created: 2017/09/18 17:38:32 by mtacnet           #+#    #+#             */
+/*   Updated: 2017/09/18 17:38:58 by mtacnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
-size_t		ft_strlen(char const *s)
+void	view_tab(char **tab)
 {
-	size_t		i;
+	int		i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (tab[i] && tab[i][0] != '\0')
 	{
+		ft_putendl(tab[i]);
 		i++;
 	}
-	return (i);
 }

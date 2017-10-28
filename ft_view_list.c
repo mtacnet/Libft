@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   view_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtacnet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 17:46:10 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/01/04 13:28:17 by mtacnet          ###   ########.fr       */
+/*   Created: 2017/09/01 14:14:44 by mtacnet           #+#    #+#             */
+/*   Updated: 2017/09/01 14:15:20 by mtacnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char const *s)
+void	view_list(t_elem **lst)
 {
-	size_t		i;
+	t_elem		*head;
 
-	i = 0;
-	while (s[i] != '\0')
+	head = (*lst);
+	while ((*lst) != NULL)
 	{
-		i++;
+		ft_putendl((*lst)->content);
+		(*lst) = (*lst)->next;
 	}
-	return (i);
+	(*lst) = head;
 }

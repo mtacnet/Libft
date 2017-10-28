@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   cpy_lst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtacnet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 17:46:10 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/01/04 13:28:17 by mtacnet          ###   ########.fr       */
+/*   Created: 2017/09/01 14:15:38 by mtacnet           #+#    #+#             */
+/*   Updated: 2017/09/01 14:16:10 by mtacnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char const *s)
+void	cpy_lst(t_elem **lst_dest, t_elem **lst_src)
 {
-	size_t		i;
+	t_elem		*head;
 
-	i = 0;
-	while (s[i] != '\0')
+	head = (*lst_src);
+	while ((*lst_src) != NULL)
 	{
-		i++;
+		push_elem(lst_dest, (*lst_src)->content);
+		(*lst_src) = (*lst_src)->next;
 	}
-	return (i);
+	(*lst_src) = head;
 }

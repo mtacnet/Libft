@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   freelst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtacnet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 17:46:10 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/01/04 13:28:17 by mtacnet          ###   ########.fr       */
+/*   Created: 2017/09/01 14:03:13 by mtacnet           #+#    #+#             */
+/*   Updated: 2017/09/01 14:06:12 by mtacnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char const *s)
+void	freelst(t_elem **lst)
 {
-	size_t		i;
+	t_elem		*list;
+	t_elem		*tmp;
 
-	i = 0;
-	while (s[i] != '\0')
+	list = (*lst);
+	while (list)
 	{
-		i++;
+		tmp = list->next;
+		ft_strdel(&(list->content));
+		free(list);
+		list = tmp;
 	}
-	return (i);
+	(*lst) = NULL;
 }

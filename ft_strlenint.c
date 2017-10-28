@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlenint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtacnet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mtacnet <mtacnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 17:46:10 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/01/04 13:28:17 by mtacnet          ###   ########.fr       */
+/*   Created: 2017/04/27 14:08:49 by mtacnet           #+#    #+#             */
+/*   Updated: 2017/04/28 13:22:00 by mtacnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char const *s)
+int		ft_strlenint(char const *s)
 {
-	size_t		i;
+	int		i;
 
 	i = 0;
 	while (s[i] != '\0')

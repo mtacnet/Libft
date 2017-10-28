@@ -6,7 +6,7 @@
 /*   By: mtacnet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 13:56:42 by mtacnet           #+#    #+#             */
-/*   Updated: 2016/12/16 16:57:47 by mtacnet          ###   ########.fr       */
+/*   Updated: 2017/08/30 12:31:28 by mtacnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char			*ret;
 	unsigned int	i;
 
-	if (!s)
-		return (NULL);
-	if (!(ret = ft_strnew(len)))
-		return (NULL);
-	i = 0;
-	while (i < len)
+	ret = NULL;
+	if (s)
 	{
-		ret[i] = s[start];
-		i++;
-		start++;
+		if ((ret = ft_strnew(len + 1)) == NULL)
+			return (NULL);
+		i = -1;
+		while (++i < len)
+			ret[i] = s[start + i];
+		ret[i] = '\0';
+		return (ret);
 	}
-	return (ret);
+	return (NULL);
 }
